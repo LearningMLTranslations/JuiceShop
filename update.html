@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Update Products</title>
+</head>
+<body>
+
+<?php
+    include('crud.php');
+
+    $products = read();
+
+    // Loop through the products and display each one
+    foreach ($products as $product) {
+        echo '<div class="product">';
+        echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+        echo '<h2>' . $product['name'] . '</h2>';
+        echo '<p>Price: $' . $product['price'] . '</p>';
+        echo '</div>';
+    }
+
+    // Call the create function to add a new product to the database
+    $newProduct = array(
+        'name' => 'Pineapple Juice',
+        'price' => 5.99,
+        'image' => 'pineapple_juice.jpg'
+    );
+    create($newProduct);
+
+    // Call the update function to modify an existing product in the database
+    $updatedProduct = array(
+        'id' => 1,
+        'name' => 'Strawberry Juice',
+        'price' => 4.99,
+        'image' => 'strawberry_juice.jpg'
+    );
+    update($updatedProduct);
+
+    // Call the delete function to remove a product from the database
+    $productId = 2;
+    delete($productId);
+?>
+
+</body>
+</html>
