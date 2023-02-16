@@ -10,46 +10,65 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+if (isset($_POST["create"])) {
+    $price = $_POST["price"];
+    $servingSize = $_POST["servingSize"];
+    $calories = $_POST["calories"];
+    $ingredients = $_POST["ingredients"];
+    $description = $_POST["description"];
+    $name = $_POST["name"];
+    $image = $_POST["image"];
+
+    $sql = "INSERT INTO products (timestamp, price, servingSize, calories, ingredients, description, name, image)
+            VALUES (NOW(), '$price', '$servingSize', '$calories', '$ingredients', '$description', '$name', '$image')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "New product created successfully!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+}
+
 if (isset($_POST["update"])) {
     $id = $_POST["id"];
-    $name = $_POST["name"];
-    $serving_size = $_POST["servingSize"];
+    $price = $_POST["price"];
+    $servingSize = $_POST["servingSize"];
     $calories = $_POST["calories"];
     $ingredients = $_POST["ingredients"];
-    $price = $_POST["price"];
+    $description = $_POST["description"];
+    $name = $_POST["name"];
+    $image = $_POST["image"];
 
-    $sql = "UPDATE juices SET name='$name', servingSize='$serving_size', calories='$calories', ingredients='$ingredients', price='$price' WHERE id=$id";
+    $sql = "UPDATE products SET price='$price', servingSize='$servingSize', calories='$calories', ingredients='$ingredients', description='$description', name='$name', image='$image'
+            WHERE id='$id'";
+
     if (mysqli_query($conn, $sql)) {
-        echo "The product has been updated.";
+        echo "Product updated successfully!";
     } else {
-        echo "Error updating product: " . mysqli_error($conn);
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
 
-if (isset($_POST["create"])) {
-    $name = $_POST["name"];
-    $serving_size = $_POST["servingSize"];
-    $calories = $_POST["calories"];
-    $ingredients = $_POST["ingredients"];
-    $price = $_POST["price"];
+if (isset($_POST["delete"])) {
+    $id = $_POST["id"];
 
-    $sql = "INSERT INTO juices (name, servingSize, calories, ingredients, price) VALUES ('$name', '$serving_size', '$calories', '$ingredients', '$price')";
+    $sql = "DELETE FROM products WHERE id='$id'";
+
     if (mysqli_query($conn, $sql)) {
-        echo "The product has been added.";
+        echo "Product deleted successfully!";
     } else {
-        echo "Error adding product: " . mysqli_error($conn);
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
 
-$sql = "SELECT * FROM juices";
+$sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     echo "<table>";
-    echo "<tr><th>Product ID</th><th>Name</th><th>Serving size</th><th>Calories</th><th>Ingredients</th><th>Price</th></tr>";
-    // Output the data for each product
+    echo "<tr><th>ID</th><th>Timestamp</th><th>Price</th><th>Serving Size</th><th>Calories</th><th>Ingredients</th><th>Description</th><th>Name</th><th>Image</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["name"]. "</td><td>" . $row["servingSize"]. "</td><td>" . $row["calories"]. "</td><td>" . $row["ingredients"]. "</td><td>$" . $row["price"]. "</td></tr>";
+        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["timestamp"]. "</td><td>$" . $row["price"]. "</td><td>" . $row["servingSize"]. "</td><td>" . $row["calories"]. "</td><td>" . $row["ingredients"]. "</td><td>" . $row["description"]. "</td><td>" . $row["name"]. "</td><td><img src='" . $row["image"] . "' width='100' height='100'></td></tr>";
     }
     echo "</table>";
 } else {
@@ -57,4 +76,3 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-?>
