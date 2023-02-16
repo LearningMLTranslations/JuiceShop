@@ -2,31 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Product List</title>
+	<title>Update Product</title>
 	<style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-
-		th, td {
-			padding: 8px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
-
-		th {
-			background-color: #4CAF50;
-			color: white;
-		}
-
 		form {
-			margin-top: 20px;
+			width: 400px;
+			margin: 0 auto;
+			margin-top: 50px;
 		}
 
 		label {
-			display: inline-block;
-			width: 120px;
+			display: block;
+			margin-top: 10px;
+			float: left;
+			clear: left;
+			width: 100px;
+			text-align: right;
+			padding-right: 10px;
 		}
 
 		input[type=text] {
@@ -35,6 +26,7 @@
 			border: 1px solid #ccc;
 			border-radius: 3px;
 			box-sizing: border-box;
+			float: left;
 		}
 
 		button[type=submit] {
@@ -44,29 +36,25 @@
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
+			margin-top: 20px;
+			float: left;
+			clear: left;
 		}
 	</style>
 </head>
-<body>
-	<h1>Product List</h1>
-
+<body style="background-color:#f9fafc;">
+	<h1>Update Product</h1>
 	<form method="POST" action="crud.php">
-		<h2>Update Product</h2>
 		<label for="id">Product ID:</label>
 		<input type="text" id="id" name="id" required>
-		<br>
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
-		<br>
 		<label for="servingSize">Serving Size:</label>
 		<input type="text" id="servingSize" name="servingSize" required>
-		<br>
 		<label for="calories">Calories:</label>
 		<input type="text" id="calories" name="calories" required>
-		<br>
 		<label for="ingredients">Ingredients:</label>
 		<input type="text" id="ingredients" name="ingredients" required>
-		<br>
 		<label for="price">Price:</label>
 		<input type="text" id="price" name="price" required>
 		<br>
