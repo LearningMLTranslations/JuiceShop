@@ -18,11 +18,26 @@ if (isset($_POST["update"])) {
     $ingredients = $_POST["ingredients"];
     $price = $_POST["price"];
 
-    $sql = "UPDATE products SET name='$name', servingSize='$serving_size', calories='$calories', ingredients='$ingredients', price='$price' WHERE id=$id";
+    $sql = "UPDATE juices SET name='$name', servingSize='$serving_size', calories='$calories', ingredients='$ingredients', price='$price' WHERE id=$id";
     if (mysqli_query($conn, $sql)) {
         echo "The product has been updated.";
     } else {
         echo "Error updating product: " . mysqli_error($conn);
+    }
+}
+
+if (isset($_POST["create"])) {
+    $name = $_POST["name"];
+    $serving_size = $_POST["servingSize"];
+    $calories = $_POST["calories"];
+    $ingredients = $_POST["ingredients"];
+    $price = $_POST["price"];
+
+    $sql = "INSERT INTO juices (name, servingSize, calories, ingredients, price) VALUES ('$name', '$serving_size', '$calories', '$ingredients', '$price')";
+    if (mysqli_query($conn, $sql)) {
+        echo "The product has been added.";
+    } else {
+        echo "Error adding product: " . mysqli_error($conn);
     }
 }
 
@@ -43,32 +58,3 @@ if (mysqli_num_rows($result) > 0) {
 
 mysqli_close($conn);
 ?>
-
-/*
-function createProduct($conn, $product_name, $product_price, $product_image) {
-    $sql = "INSERT INTO juices (name, image, timestamp, price, servingSize, calories, ingredients, description) VALUES ('$product_name', '$product_price', '$product_image')";
-    if (mysqli_query($conn, $sql)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function updateProduct($conn, $product_id, $product_name, $product_price, $product_image) {
-    $sql = "UPDATE products SET product_name='$product_name', product_price='$product_price', product_image='$product_image' WHERE product_id=$product_id";
-    if (mysqli_query($conn, $sql)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function deleteProduct($conn, $product_id) {
-    $sql = "DELETE FROM products WHERE product_id=$product_id";
-    if (mysqli_query($conn, $sql)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-*/
