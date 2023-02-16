@@ -41,6 +41,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "No products found in the database.";
 }
 
+mysqli_close($conn);
+?>
+
 /*
 function createProduct($conn, $product_name, $product_price, $product_image) {
     $sql = "INSERT INTO juices (name, image, timestamp, price, servingSize, calories, ingredients, description) VALUES ('$product_name', '$product_price', '$product_image')";
@@ -69,5 +72,3 @@ function deleteProduct($conn, $product_id) {
     }
 }
 */
-mysqli_close($conn);
-?>

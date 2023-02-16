@@ -1,46 +1,80 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Update Products</title>
+	<title>Product List</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		label {
+			display: inline-block;
+			width: 120px;
+		}
+
+		input[type=text] {
+			width: 250px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			box-sizing: border-box;
+		}
+
+		button[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
+	<h1>Product List</h1>
+	<?php include 'crud.php'; ?>
 
-<?php
-    include('crud.php');
+	<form method="POST">
+		<h2>Update Product</h2>
+		<label for="id">Product ID:</label>
+		<input type="text" id="id" name="id" required>
+		<br>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+		<br>
+		<label for="servingSize">Serving Size:</label>
+		<input type="text" id="servingSize" name="servingSize" required>
+		<br>
+		<label for="calories">Calories:</label>
+		<input type="text" id="calories" name="calories" required>
+		<br>
+		<label for="ingredients">Ingredients:</label>
+		<input type="text" id="ingredients" name="ingredients" required>
+		<br>
+		<label for="price">Price:</label>
+		<input type="text" id="price" name="price" required>
+		<br>
+		<button type="submit" name="update">Update Product</button>
+	</form>
 
-    $products = read();
-
-    // Loop through the products and display each one
-    foreach ($products as $product) {
-        echo '<div class="product">';
-        echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
-        echo '<h2>' . $product['name'] . '</h2>';
-        echo '<p>Price: $' . $product['price'] . '</p>';
-        echo '</div>';
-    }
-
-    // Call the create function to add a new product to the database
-    $newProduct = array(
-        'name' => 'Pineapple Juice',
-        'price' => 5.99,
-        'image' => 'pineapple_juice.jpg'
-    );
-    create($newProduct);
-
-    // Call the update function to modify an existing product in the database
-    $updatedProduct = array(
-        'id' => 1,
-        'name' => 'Strawberry Juice',
-        'price' => 4.99,
-        'image' => 'strawberry_juice.jpg'
-    );
-    update($updatedProduct);
-
-    // Call the delete function to remove a product from the database
-    $productId = 2;
-    delete($productId);
-?>
-
+    <p>Navigate back  <a href="./index.html">home.</a> We still have the best juices.</p>
+    <p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>
 </body>
 </html>
