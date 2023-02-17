@@ -1,4 +1,4 @@
-<?php require "crud.php"; ?>
+<?php require_once "db.php"; ?>
 <html>
 <body>
 
