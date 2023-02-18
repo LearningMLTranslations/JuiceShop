@@ -3,6 +3,7 @@ $host = "localhost";
 $username = "root";
 $password = "L0g1n_P4s\$w0rd";
 $dbname = "juiceshop";
+
 $conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -10,13 +11,13 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST["create"])) {
-    $price = $_POST["price"];
-    $servingSize = $_POST["servingSize"];
-    $calories = $_POST["calories"];
-    $ingredients = $_POST["ingredients"];
-    $description = $_POST["description"];
-    $name = $_POST["name"];
-    $image = $_POST["image"];
+    $price = mysqli_real_escape_string($conn, $_POST["price"]);
+    $servingSize = mysqli_real_escape_string($conn, $_POST["servingSize"]);
+    $calories = mysqli_real_escape_string($conn, $_POST["calories"]);
+    $ingredients = mysqli_real_escape_string($conn, $_POST["ingredients"]);
+    $description = mysqli_real_escape_string($conn, $_POST["description"]);
+    $name = mysqli_real_escape_string($conn, $_POST["name"]);
+    $image = mysqli_real_escape_string($conn, $_POST["image"]);
 
     $sql = "INSERT INTO juices (timestamp, price, servingSize, calories, ingredients, description, name, image)
             VALUES (NOW(), '$price', '$servingSize', '$calories', '$ingredients', '$description', '$name', '$image')";
@@ -29,14 +30,14 @@ if (isset($_POST["create"])) {
 }
 
 if (isset($_POST["update"])) {
-    $id = $_POST["id"];
-    $price = $_POST["price"];
-    $servingSize = $_POST["servingSize"];
-    $calories = $_POST["calories"];
-    $ingredients = $_POST["ingredients"];
-    $description = $_POST["description"];
-    $name = $_POST["name"];
-    $image = $_POST["image"];
+    $id = mysqli_real_escape_string($conn, $_POST["id"]);
+    $price = mysqli_real_escape_string($conn, $_POST["price"]);
+    $servingSize = mysqli_real_escape_string($conn, $_POST["servingSize"]);
+    $calories = mysqli_real_escape_string($conn, $_POST["calories"]);
+    $ingredients = mysqli_real_escape_string($conn, $_POST["ingredients"]);
+    $description = mysqli_real_escape_string($conn, $_POST["description"]);
+    $name = mysqli_real_escape_string($conn, $_POST["name"]);
+    $image = mysqli_real_escape_string($conn, $_POST["image"]);
 
     $sql = "UPDATE juices SET price='$price', servingSize='$servingSize', calories='$calories', ingredients='$ingredients', description='$description', name='$name', image='$image'
             WHERE id='$id'";
@@ -51,10 +52,7 @@ if (isset($_POST["update"])) {
 if (isset($_POST["delete"])) {
     $id = mysqli_real_escape_string($conn, $_POST["id"]);
 
-    if (!is_numeric($id)) {
-    }
-
-    $sql = "DELETE FROM juices WHERE id = $id";
+    $sql = "DELETE FROM juices WHERE id='$id'";
 
     if (mysqli_query($conn, $sql)) {
         echo "Product deleted successfully!";
@@ -78,4 +76,3 @@ if (mysqli_num_rows($result) != 0) {
 }
 
 mysqli_close($conn);
-?>
