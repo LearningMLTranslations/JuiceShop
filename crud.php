@@ -3,7 +3,6 @@ $host = "localhost";
 $username = "root";
 $password = "L0g1n_P4s\$w0rd";
 $dbname = "juiceshop";
-
 $conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -19,7 +18,7 @@ if (isset($_POST["create"])) {
     $name = $_POST["name"];
     $image = $_POST["image"];
 
-    $sql = "INSERT INTO products (timestamp, price, servingSize, calories, ingredients, description, name, image)
+    $sql = "INSERT INTO juices (timestamp, price, servingSize, calories, ingredients, description, name, image)
             VALUES (NOW(), '$price', '$servingSize', '$calories', '$ingredients', '$description', '$name', '$image')";
 
     if (mysqli_query($conn, $sql)) {
@@ -39,7 +38,7 @@ if (isset($_POST["update"])) {
     $name = $_POST["name"];
     $image = $_POST["image"];
 
-    $sql = "UPDATE products SET price='$price', servingSize='$servingSize', calories='$calories', ingredients='$ingredients', description='$description', name='$name', image='$image'
+    $sql = "UPDATE juices SET price='$price', servingSize='$servingSize', calories='$calories', ingredients='$ingredients', description='$description', name='$name', image='$image'
             WHERE id='$id'";
 
     if (mysqli_query($conn, $sql)) {
@@ -50,9 +49,12 @@ if (isset($_POST["update"])) {
 }
 
 if (isset($_POST["delete"])) {
-    $id = $_POST["id"];
+    $id = mysqli_real_escape_string($conn, $_POST["id"]);
 
-    $sql = "DELETE FROM products WHERE id='$id'";
+    if (!is_numeric($id)) {
+    }
+
+    $sql = "DELETE FROM juices WHERE id = $id";
 
     if (mysqli_query($conn, $sql)) {
         echo "Product deleted successfully!";
@@ -61,10 +63,10 @@ if (isset($_POST["delete"])) {
     }
 }
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM juices";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result) != 0) {
     echo "<table>";
     echo "<tr><th>ID</th><th>Timestamp</th><th>Price</th><th>Serving Size</th><th>Calories</th><th>Ingredients</th><th>Description</th><th>Name</th><th>Image</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
@@ -76,3 +78,4 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
+?>
