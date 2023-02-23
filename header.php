@@ -51,9 +51,9 @@
 
     <?php
     if($_SESSION['username'] != NULL) {
-    echo '<a href="./admin/logout.php">Logout</a>'
+    echo '<a href="./admin/logout.php">Logout</a>';
     } else {
-    echo '<a href="./admin/login.php">Login</a>'
+    echo '<a href="./admin/login.php">Login</a>';
         }
     ?>
 

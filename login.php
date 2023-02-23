@@ -41,7 +41,7 @@ if($_SESSION['username']) {
 ?>
 <html>
 <body>
-
+<?php include '../header.php'; ?>
 <form method="post" action="login.php">
 	<input type="hidden" name="redirect" value="<?= $_REQUEST['redirect'] ?>" />
 

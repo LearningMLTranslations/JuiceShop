@@ -1,3 +1,4 @@
+<?php include session_start() ?>
 <?php include './header.php'; ?>
 	<h1>Welcome to the Juice Shop!</h1>
 	<img alt="My Logo" src="./my_logo.jpg" width="400" />
