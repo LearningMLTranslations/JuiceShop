@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "/var/www/thesecretserver/db.php";
+require_once "../db.php";
 
 if ($_SERVER['REQUEST_METHOD'] =='POST') {
     $myusername = $_REQUEST['username'];
@@ -41,7 +41,7 @@ if($_SESSION['username']) {
 ?>
 <html>
 <body>
-<?php include '/var/www/thesecretserver/header.php'; ?>
+<?php include '../header.php'; ?>
 <form method="post" action="login.php">
 	<input type="hidden" name="redirect" value="<?= $_REQUEST['redirect'] ?>" />
 
