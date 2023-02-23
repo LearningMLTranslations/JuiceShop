@@ -68,7 +68,7 @@ if (mysqli_num_rows($result) != 0) {
     echo "<table>";
     echo "<tr><th>ID</th><th>Timestamp</th><th>Price</th><th>Serving Size</th><th>Calories</th><th>Ingredients</th><th>Description</th><th>Name</th><th>Image</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["timestamp"]. "</td><td>$" . $row["price"]. "</td><td>" . $row["servingSize"]. "</td><td>" . $row["calories"]. "</td><td>" . $row["ingredients"]. "</td><td>" . $row["description"]. "</td><td>" . $row["name"]. "</td><td><img src='" . $row["image"] . "' width='100' height='100'></td></tr>";
+        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["timestamp"]. "</td><td>$" . $row["price"]. "</td><td>" . $row["servingSize"]. "</td><td>" . $row["calories"]. "</td><td>" . $row["ingredients"]. "</td><td>" . $row["description"]. "</td><td>" . $row["name"]. "</td><td><img src='images/" . $row["image"] . "' width='100' height='100'></td></tr>";
     }
     echo "</table>";
 } else {

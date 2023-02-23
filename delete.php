@@ -46,11 +46,11 @@
 	<h1>Delete Product</h1>
 	<form method="POST" action="crud.php">
 		<label for="id">Product ID:</label>
-		<input type="text" id="id" name="id" required>
+		<input type="number" id="id" name="id" required>
 		<br>
 		<button type="submit" name="delete">Delete Product</button>
 	</form>
-
+<br /><br /><br />
     <p>Navigate back  <a href="./index.html">home.</a> We still have the best juices.</p>
 	<p><a href="./list.php">View</a>, <a href="./create.php">add</a>, <a href="./delete.php">remove</a>, or <a href="./update.php">update</a> products.</p>
     <p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>

@@ -74,7 +74,7 @@
         <br>
 		<button type="submit" name="update">Update Product</button>
 	</form>
-
+<br /><br /><br />
     <p>Navigate back  <a href="./index.html">home.</a> We still have the best juices.</p>
 	<p><a href="./list.php">View</a>, <a href="./create.php">add</a>, <a href="./delete.php">remove</a>, or <a href="./update.php">update</a> products.</p>
     <p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>
