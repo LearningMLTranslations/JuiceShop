@@ -2,7 +2,7 @@
 session_start();
 
 if(!$_SESSION['username']) {
-	header("Location: login.php?redirect={$_SERVER['REQUEST_URI']}");
+	header("Location: https://juiceshop.com/admin/login.php");
 	exit();
 }
 ?>

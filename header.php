@@ -48,8 +48,14 @@
         <a href="./index.php">Home</a>
         <a href="./products2.html">Products</a>
         <a href="./create.php">Create</a>
+
+    <?php
+    if($_SESSION['username'] != NULL) {
+    echo '<a href="./admin/logout.php">Logout</a>'
+    } else {
+    echo '<a href="./admin/login.php">Login</a>'
+        }
+    ?>
+
       </div>
-  <div class="header-right">
-    <button type="submit" style="background-color: #4CAF50; color: white; border: 2px solid #4CAF50; padding: 10px 20px; font-size: 16px; border-radius: 5px;">Login</button>
-  </div>
   </header>

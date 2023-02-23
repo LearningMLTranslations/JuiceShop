@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once "./admin/force_login.inc"; ?>
 <head>
-	<meta charset="UTF-8">
-	<title>Update Product</title>
 	<style>
 		form {
 			width: 400px;
