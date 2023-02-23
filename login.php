@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "../db.php";
+require_once "./db.php";
 
 if ($_SERVER['REQUEST_METHOD'] =='POST') {
     $myusername = $_REQUEST['username'];
@@ -43,7 +43,7 @@ if($_SESSION['username']) {
 <body>
 <?php include '../header.php'; ?>
 <form method="post" action="login.php">
-	<input type="hidden" name="redirect" value="<?= $_REQUEST['redirect'] ?>" />
+	<input type="hidden" name="redirect" value="<?php echo $_REQUEST['redirect']; ?>" />
 
 	<label>Username:</label>
 	<input type="text" name="username" />

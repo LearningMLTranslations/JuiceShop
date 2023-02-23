@@ -37,7 +37,7 @@
     <br>
 
 <div class="product-card">
-	<img alt="Orange Juice" src="./images/orange_juice.jpg" width="300"/>
+	<img alt="Orange Juice" src="./images/orange_juice.jpg" width="300" height="340"/>
 	<h2>Orange Juice</h2>
 	<p>Serving size: 8 fl oz</p>
 	<p>Calories: 120</p>
@@ -46,7 +46,7 @@
 </div>
 
 <div class="product-card">
-    <img alt="Apple Juice" src="./images/apple_juice.jpg" width="300"/>
+    <img alt="Apple Juice" src="./images/apple_juice.jpg" width="300" height="340"//>
     <h2>Apple Juice</h2>
     <p>Serving size: 8 fl oz</p>
     <p>Calories: 110</p>
@@ -55,7 +55,7 @@
 </div>
 
 <div class="product-card">
-	<img alt="Mango Juice" src="./images/mango_juice.jpg" width="300"/>
+	<img alt="Mango Juice" src="./images/mango_juice.jpg" width="300" height="340"//>
 	<h2>Mango Juice</h2>
 	<p>Serving size: 8 fl oz</p>
 	<p>Calories: 130</p>
@@ -64,7 +64,7 @@
 </div>
 
 <div class="product-card">
-	<img alt="Lemon Juice" src="./images/lemon_juice.jpg" width="300"/>
+	<img alt="Lemon Juice" src="./images/lemon_juice.jpg" width="300" height="340"//>
 	<h2>Lemon Juice</h2>
 	<p>Serving size: 8 fl oz</p>
 	<p>Calories: 90</p>
@@ -72,7 +72,6 @@
 	<button onclick="alert('Thanks for your purchase of Lemon Juice!')">Buy Now ($3.99)</button>
 </div>
 
-	<p>Navigate back  <a href="index.php">home.</a> We still have the best juices.</p>
 	<p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>
 </body>
 </html>

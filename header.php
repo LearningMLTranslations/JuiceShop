@@ -46,11 +46,11 @@
     <header>
       <div class="header-left">
         <a href="./index.php">Home</a>
-        <a href="./products2.html">Products</a>
+        <a href="./products.php">Products</a>
 
     <?php
     if($_SESSION['username'] != NULL) {
-    echo '<a href="./admin/logout.php">Logout</a>';
+    echo '<a href="./admin/logout.php">Logout </a>';
     echo '<a href="./create.php">Create</a>';
     } else {
     echo '<a href="./admin/login.php">Login</a>';
