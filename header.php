@@ -45,15 +45,15 @@
 <body style="background-color:#f9fafc;">
     <header>
       <div class="header-left">
-        <a href="./index.php">Home</a>
-        <a href="./products2.html">Products</a>
-        <a href="./create.php">Create</a>
+        <a href="/var/www/thesecretserver/index.php">Home</a>
+        <a href="/var/www/thesecretserver/products2.html">Products</a>
 
     <?php
     if($_SESSION['username'] != NULL) {
-    echo '<a href="./admin/logout.php">Logout</a>';
+    echo '<a href="/var/www/thesecretserver/admin/logout.php">Logout</a>';
+    echo '<a href="/var/www/thesecretserver/create.php">Create</a>';
     } else {
-    echo '<a href="./admin/login.php">Login</a>';
+    echo '<a href="/var/www/thesecretserver/admin/login.php">Login</a>';
         }
     ?>
 
