@@ -46,20 +46,20 @@
 
 <body style="background-color:#f9fafc;">
 	<h1>Update Product</h1>
-
+<?php include './header.php'; ?>
 	<form action="crud.php" method="post">
 		<label for="id">ID:</label>
 		<input type="number" id="id" name="id" required><br>
-
+<br>
 		<label for="price">Price:</label>
 		<input type="number" id="price" name="price" step="0.01" required><br>
-
+<br>
 		<label for="servingSize">Serving Size:</label>
 		<input type="text" id="servingSize" name="servingSize" required><br>
-
+<br><br>
 		<label for="calories">Calories:</label>
 		<input type="number" id="calories" name="calories" required><br>
-
+<br>
 		<label for="ingredients">Ingredients:</label>
 		<input type="text" id="ingredients" name="ingredients" required><br>
 
@@ -75,7 +75,7 @@
 		<button type="submit" name="update">Update Product</button>
 	</form>
 <br /><br /><br />
-    <p>Navigate back  <a href="./index.html">home.</a> We still have the best juices.</p>
+    <p>Navigate back  <a href="./index.php">home.</a> We still have the best juices.</p>
 	<p><a href="./list.php">View</a>, <a href="./create.php">add</a>, <a href="./delete.php">remove</a>, or <a href="./update.php">update</a> products.</p>
     <p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>
 </body>

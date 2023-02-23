@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Product List</title>
 	<style>
 		table {
 			border-collapse: collapse;
@@ -22,6 +18,7 @@
 	</style>
 </head>
 <body style="background-color:#f9fafc;">
+<?php include './header.php'; ?>
 	<h1>Product List</h1>
 
 	<table>
@@ -32,7 +29,7 @@
 		</tbody>
 	</table>
 <br /><br /><br />
-	<p>Navigate back  <a href="./index.html">home.</a> We still have the best juices.</p>
+	<p>Navigate back  <a href="./index.php">home.</a> We still have the best juices.</p>
 	<p><a href="./list.php">View</a>, <a href="./create.php">add</a>, <a href="./delete.php">remove</a>, or <a href="./update.php">update</a> products.</p>
 	<p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>
 </body>
