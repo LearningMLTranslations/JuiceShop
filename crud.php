@@ -61,7 +61,10 @@ if (isset($_POST["delete"])) {
     }
 }
 
-$sql = "SELECT * FROM juices";
+$order = $_REQUEST['order'];
+$search = $_REQUEST['search'];
+
+$sql = "SELECT * FROM juices WHERE name LIKE '%$search%' ORDER BY $order";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) != 0) {

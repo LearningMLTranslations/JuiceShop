@@ -18,14 +18,19 @@
 	</style>
 </head>
 <body style="background-color:#f9fafc;">
-<?php include 'juiceshop.com/header.php'; ?>
+
+<a href="?order=name">Sort by Name</a> | <a href="?order=price">Sort by Highest Price</a> | <a href="?order=price DESC">Sort by Lowest Price</a>
+<form action="?order=name">
+    <input type="text" name="search">
+    <input type="submit" name="Search">
+    </form>
+
+<?php include '/header.php'; ?>
 	<h1>Product List</h1>
 
 	<table>
 		<tbody>
-			<?php
-			    include 'juiceshop.com/crud.php';
-			?>
+			<?php include '/crud.php'; ?>
 		</tbody>
 	</table>
 <br /><br /><br />

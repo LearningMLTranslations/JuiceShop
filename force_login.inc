@@ -2,7 +2,7 @@
 session_start();
 
 if(!$_SESSION['username']) {
-	header("Location: juiceshop.com/admin/login.php");
+	header("Location: /admin/login.php");
 	exit();
 }
 ?>

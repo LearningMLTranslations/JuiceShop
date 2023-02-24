@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "juiceshop.com/db.php";
+require_once "/db.php";
 
 if ($_SERVER['REQUEST_METHOD'] =='POST') {
     $myusername = $_REQUEST['username'];
@@ -40,8 +40,8 @@ if(isset($_SESSION['username'])) {
 ?>
 <html>
 <body>
-<?php include 'juiceshop.com/header.php'; ?>
-<form method="post" action="juiceshop.com/admin/login.php">
+<?php include '/header.php'; ?>
+<form method="post" action="/admin/login.php">
 	<input type="hidden" name="redirect" value="<?php echo isset($_REQUEST['redirect']); ?>" />
 
 	<label>Username:</label>
