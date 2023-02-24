@@ -1,4 +1,4 @@
-<?php require_once "https://www.juiceshop.com/admin/force_login.inc"; ?>
+<?php require_once "juiceshop.com/admin/force_login.inc"; ?>
 <head>
 	<style>
 		form {
@@ -40,7 +40,7 @@
 	</style>
 </head>
 <body style="background-color:#f9fafc;">
-<?php include 'https://www.juiceshop.com/header.php'; ?>
+<?php include 'juiceshop.com/header.php'; ?>
 	<h1>Delete Product</h1>
 	<form method="POST" action="crud.php">
 		<label for="id">Product ID:</label>

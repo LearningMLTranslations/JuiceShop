@@ -5,7 +5,7 @@ session_destroy();
 ?>
 <html>
 <body>
-<?php include 'https://www.juiceshop.com/header.php'; ?>
+<?php include 'juiceshop.com/header.php'; ?>
 <p>You have been successfully logged out.</p>
 </body>
 </html>

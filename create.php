@@ -1,5 +1,5 @@
-<?php require_once "https://www.juiceshop.com/admin/force_login.inc"; ?>
-<?php include "https://www.juiceshop.com/header.php"; ?>
+<?php require_once "juiceshop.com/admin/force_login.inc"; ?>
+<?php include "juiceshop.com/header.php"; ?>
 	<h1>Create Product</h1>
 
 	<form action="crud.php" method="post">

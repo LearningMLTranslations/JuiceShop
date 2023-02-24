@@ -18,13 +18,13 @@
 	</style>
 </head>
 <body style="background-color:#f9fafc;">
-<?php include 'https://www.juiceshop.com/header.php'; ?>
+<?php include 'juiceshop.com/header.php'; ?>
 	<h1>Product List</h1>
 
 	<table>
 		<tbody>
 			<?php
-			    include 'https://www.juiceshop.com/crud.php';
+			    include 'juiceshop.com/crud.php';
 			?>
 		</tbody>
 	</table>
