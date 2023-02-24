@@ -26,11 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] =='POST') {
     } else {
         echo "<p>Incorrect username OR password</p>";
     }
-    } else {
-    $myusername = "";
+
 }
 
-if($_SESSION['username']) {
+if(isset($_SESSION['username'])) {
 	// Let's redirect instead of saying "Welcome" here
 	//echo "<p>Welcome {$_SESSION['username']}</p>";
 
@@ -41,9 +40,9 @@ if($_SESSION['username']) {
 ?>
 <html>
 <body>
-<?php include '../header.php'; ?>
-<form method="post" action="login.php">
-	<input type="hidden" name="redirect" value="<?php echo $_REQUEST['redirect']; ?>" />
+<?php include 'https://www.juiceshop.com/header.php'; ?>
+<form method="post" action="https://www.juiceshop.com/admin/login.php">
+	<input type="hidden" name="redirect" value="<?php echo isset($_REQUEST['redirect']); ?>" />
 
 	<label>Username:</label>
 	<input type="text" name="username" />

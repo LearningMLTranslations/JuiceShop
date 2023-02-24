@@ -18,18 +18,17 @@
 	</style>
 </head>
 <body style="background-color:#f9fafc;">
-<?php include './header.php'; ?>
+<?php include 'https://www.juiceshop.com/header.php'; ?>
 	<h1>Product List</h1>
 
 	<table>
 		<tbody>
 			<?php
-			    include 'crud.php';
+			    include 'https://www.juiceshop.com/crud.php';
 			?>
 		</tbody>
 	</table>
 <br /><br /><br />
-	<p><a href="./list.php">View</a>, <a href="./create.php">add</a>, <a href="./delete.php">remove</a>, or <a href="./update.php">update</a> products.</p>
 	<p>This site is sponsored by <a href="https://www.wctc.edu">www.wctc.edu</a></p>
 </body>
 </html>

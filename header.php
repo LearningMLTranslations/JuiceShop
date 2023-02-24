@@ -45,15 +45,19 @@
 <body style="background-color:#f9fafc;">
     <header>
       <div class="header-left">
-        <a href="./index.php">Home</a>
-        <a href="./products.php">Products</a>
-
+        <a href="https://www.juiceshop.com/index.php">Home</a>
+        <a href="https://www.juiceshop.com/products.php">Products</a>
     <?php
-    if($_SESSION['username'] != NULL) {
-    echo '<a href="./admin/logout.php">Logout </a>';
-    echo '<a href="./create.php">Create</a>';
+    echo '<a href="https://www.juiceshop.com/list.php">View our Products!</a>';
+    ?>
+    <?php
+    if(isset($_SESSION['username']) && $_SESSION['username'] != NULL) {
+    echo '<a href="https://www.juiceshop.com/admin/logout.php">Logout</a> ';
+    echo '<a href="https://www.juiceshop.com/create.php">Create</a>';
+    echo '<a href="https://www.juiceshop.com/update.php">Update</a>';
+    echo '<a href="https://www.juiceshop.com/delete.php">Delete</a>';
     } else {
-    echo '<a href="./admin/login.php">Login</a>';
+    echo '<a href="https://www.juiceshop.com/admin/login.php">Login</a>';
         }
     ?>
 
