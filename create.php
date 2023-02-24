@@ -1,5 +1,5 @@
 <?php require_once "/admin/force_login.inc"; ?>
-<?php include "/header.php"; ?>
+<?php include "header.php"; ?>
 	<h1>Create Product</h1>
 
 	<form action="crud.php" method="post">

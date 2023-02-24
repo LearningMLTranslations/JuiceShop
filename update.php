@@ -43,7 +43,7 @@
 
 <body style="background-color:#f9fafc;">
 	<h1>Update Product</h1>
-<?php include '/header.php'; ?>
+<?php include 'header.php'; ?>
 	<form action="crud.php" method="post">
 		<label for="id">ID:</label>
 		<input type="number" id="id" name="id" required><br>

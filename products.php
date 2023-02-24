@@ -32,7 +32,7 @@
 </head>
 
 <body style="background-color:#f9fafc;">
-<?php include '/header.php'; ?>
+<?php include 'header.php'; ?>
 	<h1>Enjoy our product selection!</h1>
     <br>
 
@@ -46,7 +46,7 @@
 </div>
 
 <div class="product-card">
-    <img alt="Apple Juice" src="/images/apple_juice.jpg" width="300" height="340"//>
+    <img alt="Apple Juice" src="/images/apple_juice.jpg" width="300" height="340"/>
     <h2>Apple Juice</h2>
     <p>Serving size: 8 fl oz</p>
     <p>Calories: 110</p>
@@ -55,7 +55,7 @@
 </div>
 
 <div class="product-card">
-	<img alt="Mango Juice" src="/images/mango_juice.jpg" width="300" height="340"//>
+	<img alt="Mango Juice" src="/images/mango_juice.jpg" width="300" height="340"/>
 	<h2>Mango Juice</h2>
 	<p>Serving size: 8 fl oz</p>
 	<p>Calories: 130</p>
@@ -64,7 +64,7 @@
 </div>
 
 <div class="product-card">
-	<img alt="Lemon Juice" src="/images/lemon_juice.jpg" width="300" height="340"//>
+	<img alt="Lemon Juice" src="/images/lemon_juice.jpg" width="300" height="340"/>
 	<h2>Lemon Juice</h2>
 	<p>Serving size: 8 fl oz</p>
 	<p>Calories: 90</p>

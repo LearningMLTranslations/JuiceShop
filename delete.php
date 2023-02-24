@@ -40,7 +40,7 @@
 	</style>
 </head>
 <body style="background-color:#f9fafc;">
-<?php include '/header.php'; ?>
+<?php include 'header.php'; ?>
 	<h1>Delete Product</h1>
 	<form method="POST" action="crud.php">
 		<label for="id">Product ID:</label>

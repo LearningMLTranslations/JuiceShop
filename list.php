@@ -25,12 +25,12 @@
     <input type="submit" name="Search">
     </form>
 
-<?php include '/header.php'; ?>
+<?php include 'header.php'; ?>
 	<h1>Product List</h1>
 
 	<table>
 		<tbody>
-			<?php include '/crud.php'; ?>
+			<?php include 'crud.php'; ?>
 		</tbody>
 	</table>
 <br /><br /><br />
